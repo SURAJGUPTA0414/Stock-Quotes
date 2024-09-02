@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Stock List</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+            max-width: 1200px;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 32px;
+            color: #343a40;
+        }
+        .table {
+            margin-top: 20px;
+        }
+        .table th, .table td {
+            text-align: center;
+        }
+        .btn-primary {
+            margin-bottom: 20px;
+        }
+        .btn-warning, .btn-danger {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Stock Market</h2>
+    <a href="/stock/add" class="btn btn-primary">Add New Stock</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Company</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="stock : ${stocks}">
+                <td th:text="${stock.id}"></td>
+                <td th:text="${stock.company}"></td>
+                <td th:text="${stock.quantity}"></td>
+                <td th:text="${stock.price}"></td>
+                <td>
+                    <a th:href="@{/stock/edit/{id}(id=${stock.id})}" class="btn btn-warning btn-sm">Edit</a>
+                    <a th:href="@{/stock/delete/{id}(id=${stock.id})}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Quote</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <h2>Add Quote</h2>
+    <form th:action="@{/quotes/add}" th:object="${quote}" method="post">
+        <div class="form-group">
+            <label for="quote">Quote</label>
+            <input type="text" class="form-control" id="quote" th:field="*{quote}">
+        </div>
+        <div class="form-group">
+            <label for="author">Author</label>
+            <input type="text" class="form-control" id="author" th:field="*{author}">
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>
+</body>
+</html>

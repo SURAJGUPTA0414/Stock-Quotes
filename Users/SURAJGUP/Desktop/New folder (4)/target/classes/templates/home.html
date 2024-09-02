@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home - Quotes Management System</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #e9ecef;
+            font-family: 'Roboto', sans-serif;
+        }
+        .header {
+            background-color: #343a40;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 42px;
+            font-weight: 700;
+        }
+        .navbar {
+            background-color: #495057;
+            margin-bottom: 30px;
+        }
+        .navbar a {
+            color: white;
+            font-size: 18px;
+            margin-right: 20px;
+            transition: color 0.3s ease;
+        }
+        .navbar a:hover {
+            color: #ffd700;
+            text-decoration: none;
+        }
+        .welcome-section {
+            text-align: center;
+            margin-top: 100px;
+        }
+        .welcome-section h2 {
+            font-size: 48px;
+            color: #343a40;
+            font-weight: 600;
+        }
+        .welcome-section p {
+            font-size: 22px;
+            color: #6c757d;
+            margin-top: 10px;
+        }
+        .cta-buttons {
+            margin-top: 40px;
+        }
+        .cta-buttons .btn {
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            margin: 0 10px;
+            border-radius: 50px;
+        }
+        .btn-quotes {
+            background-color: #28a745;
+            color: white;
+        }
+        .btn-quotes:hover {
+            background-color: #218838;
+        }
+        .btn-stocks {
+            background-color: #007bff;
+            color: white;
+        }
+        .btn-stocks:hover {
+            background-color: #0069d9;
+        }
+        .btn-products {
+            background-color: #ffc107;
+            color: #343a40;
+        }
+        .btn-products:hover {
+            background-color: #e0a800;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.1);
+        }
+        footer p {
+            margin: 0;
+            font-size: 16px;
+        }
+      
+    .navbar {
+        background-color: #007bff; /* Change background color to blue */
+        margin-bottom: 30px;
+        padding: 15px 0;
+    }
+    .navbar a {
+        color: white; /* Keep the text color white for contrast */
+        font-size: 18px;
+        margin-right: 20px;
+        padding: 10px 15px;
+        border-radius: 5px; /* Add some rounded corners to links */
+        transition: background-color 0.3s, color 0.3s;
+    }
+    .navbar a:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+        color: #ffffff; /* Keep the text color white on hover */
+        text-decoration: none;
+    }
+    .navbar a.active {
+        background-color: #ffc107; /* Highlight active link with yellow */
+        color: #343a40; /* Dark text on active link for contrast */
+    }
+
+
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="header">
+        <h1>Welcome to Stock Queue Management System</h1>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-sm">
+        <div class="container">
+            <a class="nav-item nav-link" th:href="@{/quotes}">Quotes</a>
+            <a class="nav-item nav-link" th:href="@{/stock}">Stocks</a>
+            <a class="nav-item nav-link" th:href="@{/products}">Products</a>
+        </div>
+    </nav>
+
+    <!-- Welcome Section -->
+    <div class="container welcome-section">
+		<h2>Take Control of Your Financial Future</h2>
+<p>Streamline your quotes, stocks, and products management with ease and confidence, all from one powerful platform.</p>
+
+
+        <!-- Call-to-Action Buttons -->
+        <div class="cta-buttons">
+            <a href="/quotes" class="btn btn-quotes">Manage Quotes</a>
+            <a href="/stock" class="btn btn-stocks">View Stocks</a>
+            <a href="/products" class="btn btn-products">Explore Products</a>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Stock Queue Management System. All rights reserved.</p>
+    </footer>
+</body>
+</html>
